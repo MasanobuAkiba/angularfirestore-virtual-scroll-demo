@@ -1,0 +1,18 @@
+<div class="virtual-scroll" *ngIf="items$ | async as items">
+
+    <div class="virtual-scroll-overlay"></div>
+
+    <virtual-scroll [items]="items" (update)="$event" (end)="fetchMore($event)" [parentScroll]="scroll.window" [childHeight]="childHeight"
+        [bufferAmount]="6" #scroll>
+
+        <ng-template *ngFor="let item of scroll.viewPortItems; let index; template: itemTemplate"></ng-template>
+
+    </virtual-scroll>
+
+    <div class="no-item" *ngIf="!items.length">
+        <ng-content select="[noItem]"></ng-content>
+    </div>
+
+</div>
+
+<app-spinner *ngIf="loadingNotify | async"></app-spinner>

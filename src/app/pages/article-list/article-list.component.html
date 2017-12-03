@@ -1,0 +1,16 @@
+<mat-toolbar class="header">
+    <div class="header__title">Virtual Scroll Demo</div>
+    <mat-slide-toggle (change)="onChange($event)">empty</mat-slide-toggle>
+</mat-toolbar>
+
+<section class="body">
+    <app-virtual-scroll [itemNotify]="itemNotify" (fetch)="onFetch($event)" #virtualScroll>
+        <ng-template let-item>
+            <app-article-item [article]="item"></app-article-item>
+        </ng-template>
+
+        <mat-card noItem>
+            ひとつもないない
+        </mat-card>
+    </app-virtual-scroll>
+</section>

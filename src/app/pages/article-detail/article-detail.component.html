@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <span>Virtual Scroll Demo</span>
+</mat-toolbar>
+
+<article *ngIf="article$ | async as article; else isLoading">
+    <header class="header">
+        <h1 class="header__title">{{ article.title }}</h1>
+        <div class="header__info">
+            <span class="header__author">著：{{ article.author }}</span>
+            <span class="header__date">{{ article.createdAt | date: 'medium' }}</span>
+        </div>
+    </header>
+
+    <div class="image">
+        <img src="/assets/image/{{ article.image }}" alt="">
+    </div>
+
+    <div class="body">
+        <p>{{ article.body }}</p>
+    </div>
+</article>
+
+<ng-template #isLoading>
+    <app-spinner></app-spinner>
+</ng-template>

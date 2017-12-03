@@ -1,0 +1,15 @@
+<div class="item" (click)="toDetail()">
+    <header class="header">
+        <img class="header__icon" src="/assets/image/{{ article.image }}">
+        <div class="header__body">
+            <div class="header__title">{{ article.id }}#{{ article.title }}</div>
+            <div class="header__sub-title">{{ article.author }}</div>
+        </div>
+    </header>
+    <footer class="footer">
+        <span class="footer__color" [style.backgroundColor]="article.color"></span>
+        <span class="footer__date">
+            {{ article.createdAt | date: 'medium' }}
+        </span>
+    </footer>
+</div>

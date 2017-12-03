@@ -1,0 +1,42 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: 100%;
+    max-width: 640px;
+}
+
+.header {
+    &__title {
+        margin: 0;
+        padding: 16px 16px 0 16px;
+    }
+
+    &__author {
+        margin-right: 16px;
+    }
+
+    &__info {
+        color: #888;
+        display: flex;
+        padding: 8px;
+        font-size: 12px;
+        justify-content: flex-end;
+    }
+}
+
+.image {
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-width: 480px;
+    }
+}
+
+.body {
+    padding: 16px;
+}
